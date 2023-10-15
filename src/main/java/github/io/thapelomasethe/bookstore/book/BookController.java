@@ -40,7 +40,7 @@ public class BookController {
 
     private final BookService bookService;
 
-    @PostMapping(path = "v1/save-books", consumes = MediaType.APPLICATION_JSON_VALUE)
+    @PostMapping(path = "v1/save-books", produces = MediaType.APPLICATION_JSON_VALUE)
     public WebAsyncTask<ResponseEntity<List<BookDto>>> saveBooksV1(final List<BookDto> books) {
         final WebAsyncTask<ResponseEntity<List<BookDto>>> webAsyncTask = new WebAsyncTask<>(() -> {
             try {
